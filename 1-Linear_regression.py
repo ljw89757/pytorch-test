@@ -40,7 +40,7 @@ def run():
     iter_num = 1000
     print("Start, b = {0}, w = {1}, error = {2}" .format(b0, w0, mse(b0, w0, points)))
     print("Running...")
-    [b, w] = grad(points, b0, w0, lr, iter_num)
+    [b, w] = iter(points, b0, w0, lr, iter_num)
     print("After {0} iterations b = {1}, m = {2}, error = {3}" .format(iter_num, b, w, mse(b, w, points)))
 
 

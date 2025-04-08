@@ -16,8 +16,8 @@ def grad(b_now, w_now, points, lr):
     for i in range(0, len(points)):
         x = points[i, 0]
         y = points[i, 1]
-        b_gradient += -(2/N) + (y - ((w_now * x) + b_now))
-        w_gradient += -(2/N) + x * (y - ((w_now * x) + b_now))
+        b_gradient += (-2  /N) * (y - ((w_now * x) + b_now))
+        w_gradient += (-2 / N) * x * (y - ((w_now * x) + b_now))
     b_new = b_now - (lr * b_gradient)
     w_new = w_now - (lr * w_gradient)
     return [b_new, w_new]
@@ -25,9 +25,9 @@ def grad(b_now, w_now, points, lr):
 
 def iter(points, b0, w0, lr, iter_num):
     b = b0
-    w = w0
+    w = w0  
     for i in range(iter_num):
-        b, w = grad(b, w, np.array(points), lr)
+        b, w = grad(b, w, points, lr)
     return [b, w]
 
 

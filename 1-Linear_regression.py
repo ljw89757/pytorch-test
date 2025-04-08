@@ -33,7 +33,10 @@ def iter(points, b0, w0, lr, iter_num):
 
 
 def run():
-    points = np.random.randn(100, 2)
+    np.random.seed(42)
+    x = np.random.rand(1000) * 100
+    y = 3 * x + 100 + np.random.normal(0, 10, size=x.shape)
+    points = np.column_stack((x, y))    
     lr = 0.001
     b0 = 0
     w0 = 0

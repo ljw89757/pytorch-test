@@ -37,7 +37,7 @@ def run():
     lr = 0.0001
     b0 = 0
     w0 = 0
-    iter_num = 1000
+    iter_num = 10000
     print("Start, b = {0}, w = {1}, error = {2}" .format(b0, w0, mse(b0, w0, points)))
     print("Running...")
     [b, w] = iter(points, b0, w0, lr, iter_num)

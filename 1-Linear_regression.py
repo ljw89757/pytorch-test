@@ -34,10 +34,10 @@ def iter(points, b0, w0, lr, iter_num):
 
 def run():
     points = np.random.randn(100, 2)
-    lr = 0.0001
+    lr = 0.001
     b0 = 0
     w0 = 0
-    iter_num = 10000
+    iter_num = 100000
     print("Start, b = {0}, w = {1}, error = {2}" .format(b0, w0, mse(b0, w0, points)))
     print("Running...")
     [b, w] = iter(points, b0, w0, lr, iter_num)

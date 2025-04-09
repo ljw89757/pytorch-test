@@ -48,7 +48,7 @@ batch_size = 512
 # step1 load dataset
 train_loader = torch.utils.data.DataLoader(
     torchvision.datasets.MNIST('mnist_data', train=True, download = True,
-                               trainsform = torchvision.transforms.Compose([
+                               transform = torchvision.transforms.Compose([
                                    torchvision.transforms.ToTensor(),
                                    torchvision.transforms.Normalize(
                                        (0.1307,), (0.3081,))
@@ -58,7 +58,7 @@ train_loader = torch.utils.data.DataLoader(
 
 test_loader = torch.utils.data.DataLoader(
     torchvision.datasets.MNIST('mnist_data/', train=False, download = True,
-                               trainsform = torchvision.transforms.Compose([
+                               transform = torchvision.transforms.Compose([
                                    torchvision.transforms.ToTensor(),
                                    torchvision.transforms.Normalize(
                                        (0.1307,), (0.3081,))

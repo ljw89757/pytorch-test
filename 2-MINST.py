@@ -35,7 +35,9 @@ def plot_image(img, label, name):
         plt.title("{}: {}".format(name, label[i].item()))
         plt.xticks([])
         plt.yticks([])
-    plt.show()
+    plt.savefig(f'{name}.png')
+    # plt.show()
+    print(f'Figure saved as {name}.png')
 
 
 def one_hot(label, depth=10):

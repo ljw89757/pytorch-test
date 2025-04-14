@@ -15,6 +15,7 @@ from torch import optim
 import torchvision
 
 
+#  plot a curve (such as loss or accuracy) over time during training.
 def plot_curve(data):
     fig = plt.figure()
     plt.plot(range(len(data)), data, color = 'blue')
@@ -24,6 +25,7 @@ def plot_curve(data):
     plt.show()
 
 
+# display images from the MNIST dataset and show the corresponding label (the digit).
 def plot_image(img, label, name):
     fig = plt.figure()
     for i in range(6):
@@ -65,5 +67,8 @@ test_loader = torch.utils.data.DataLoader(
                                ])),
     batch_size = batch_size, shuffle=True)
 
-x, y = next(iter(train_loader))
-print(x.shape, y.shape)
+
+x, y = next(iter(train_loader))  #  gets a batch of data from the training set
+print(x.shape, y.shape)  # torch.Size([512, 1, 28, 28]) torch.Size([512])
+
+plot_image(x, y, 'image sample')
